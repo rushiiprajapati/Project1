@@ -6,7 +6,7 @@ This project is designed to demonstrate practical Python skills for IT support, 
 
 ---
 
-## Table of Contents
+// Table of Contents
 
 - [Project Overview](#project-overview)
 - [Why I Built This Project](#why-i-built-this-project)
@@ -28,7 +28,7 @@ This project is designed to demonstrate practical Python skills for IT support, 
 
 ---
 
-## Project Overview
+# Project Overview
 
 The **Automated Backup & File Organizer** is a Python CLI tool that:
 
@@ -42,7 +42,7 @@ This project is built to be simple enough to understand but professional enough 
 
 ---
 
-## Why I Built This Project
+# Why I Built This Project
 
 I built this project to:
 
@@ -61,7 +61,7 @@ It demonstrates:
 
 ---
 
-## Main Features
+# Main Features
 
 - Recursively scans all files inside a source folder.
 - Creates a **dated backup folder** for each run, e.g. `2026-03-31`.
@@ -86,13 +86,13 @@ It demonstrates:
 
 ---
 
-## Technologies Used
+// Technologies Used
 
-### Language
+// Language
 
 - Python 3.8+
 
-### Standard Library Modules
+// Standard Library Modules
 
 - `os` – directory traversal
 - `shutil` – copying files, disk usage, creating ZIP archives
@@ -101,13 +101,13 @@ It demonstrates:
 - `pathlib` – object-oriented path handling
 - `tempfile` – temporary folders in tests
 
-### Testing
+// Testing
 
 - `pytest` – for running unit tests
 
 ---
 
-## Project Structure
+// Project Structure
 
 ```text
 py-backup-organizer/
@@ -164,7 +164,7 @@ py-backup-organizer/
 
 ---
 
-## How the Project Works
+# How the Project Works
 
 1. **Input from user**:  
    You provide:
@@ -203,9 +203,9 @@ py-backup-organizer/
 
 ---
 
-## Installation
+// Installation
 
-### 1. Clone the repository
+# 1. Clone the repository
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/py-backup-organizer.git
@@ -214,7 +214,7 @@ cd py-backup-organizer
 
 Replace `YOUR-USERNAME` with your GitHub username.
 
-### 2. Create a virtual environment (optional but recommended)
+# 2. Create a virtual environment (optional but recommended)
 
 ```bash
 python -m venv .venv
@@ -224,7 +224,7 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
-### 3. Install dependencies
+# 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -232,7 +232,7 @@ pip install -r requirements.txt
 
 ---
 
-## How to Run
+# How to Run
 
 From the project root (`py-backup-organizer`), run:
 
@@ -245,7 +245,7 @@ python -m backup_organizer.cli --source "C:/Users/You/Documents" --backup-root "
 
 ---
 
-## Command Options
+# Command Options
 
 | Option           | Short | Required | Description                                                      |
 |------------------|-------|----------|------------------------------------------------------------------|
@@ -256,21 +256,21 @@ python -m backup_organizer.cli --source "C:/Users/You/Documents" --backup-root "
 
 ---
 
-## Example Commands
+// Example Commands
 
-### Basic backup
+# Basic backup
 
 ```bash
 python -m backup_organizer.cli --source "C:/Users/Rushi/Documents" --backup-root "D:/MyBackups"
 ```
 
-### Backup with ZIP archive
+# Backup with ZIP archive
 
 ```bash
 python -m backup_organizer.cli --source "C:/Users/Rushi/Documents" --backup-root "D:/MyBackups" --zip
 ```
 
-### Backup without log file
+# Backup without log file
 
 ```bash
 python -m backup_organizer.cli --source "C:/Users/Rushi/Documents" --backup-root "D:/MyBackups" --no-log
@@ -278,9 +278,9 @@ python -m backup_organizer.cli --source "C:/Users/Rushi/Documents" --backup-root
 
 ---
 
-## Expected Output
+// Expected Output
 
-### Terminal output
+# Terminal output
 
 On success, you might see:
 
@@ -317,7 +317,7 @@ D:/MyBackups/
   2026-03-31.zip   (only if you used --zip)
 ```
 
-### Log file contents (`backup_log.txt`)
+# Log file contents (`backup_log.txt`)
 
 Example log:
 
@@ -334,7 +334,7 @@ Files copied: 27, Errors: 0
 
 ---
 
-## Testing
+# Testing
 
 The project includes simple tests using `pytest`.
 
@@ -360,7 +360,7 @@ or:
 python -m pytest
 ```
 
-### What the tests do
+# What the tests do
 
 - Create temporary folders and dummy files.
 - Run `backup_and_organize()` against those folders.
@@ -397,7 +397,7 @@ The backup destination drive does not have enough free space.
 
 ---
 
-### 3. No files copied
+# 3. No files copied
 
 **Possible causes:**
 
@@ -411,7 +411,7 @@ The backup destination drive does not have enough free space.
 
 ---
 
-### 4. ZIP file not created
+# 4. ZIP file not created
 
 **Cause:**  
 You did not include the `--zip` flag.
@@ -421,54 +421,7 @@ Run the command again and add `--zip`.
 
 ---
 
-## Future Improvements
-
-Ideas to make this project more advanced:
-
-- Add a simple GUI using `tkinter`.
-- Add scheduled backups via:
-  - Windows Task Scheduler
-  - cron (Linux/macOS)
-- Add email notifications after backup completion.
-- Use file hashing (e.g., `hashlib`) to avoid re-copying unchanged files.
-- Add configuration file support (e.g., `config.json`) so you don’t have to type arguments every time.
-- Add restore functionality to copy files back from a chosen backup.
-- Add logging using the `logging` module instead of just plain text files.
-
----
-
-## Resume Description
-
-You can describe this project on your resume like this:
-
-- Developed a Python-based automated backup and file organizer that recursively copies files into dated backup folders and categorizes them by file type.
-- Implemented safe-copy logic, duplicate filename handling, backup logging, disk-space checking, and optional ZIP archive creation.
-- Built a command-line interface using `argparse` and added automated tests with `pytest` to validate core functionality.
-
----
-
-## GitHub Tips
-
-To make this project look strong on GitHub:
-
-- Use clear commit messages, for example:
-  - `Add core backup logic`
-  - `Add CLI interface`
-  - `Add zip archive option`
-  - `Add pytest tests`
-  - `Improve README documentation`
-- Keep the code formatted and well-commented where necessary.
-- Pin this repository on your GitHub profile if it is one of your best projects.
-- Optionally add screenshots of:
-  - Terminal output
-  - Backup folder structure
-
----
-
-## Author
-
-**Rushi Prajapati**  
+# Author :
+Rushi Prajapati 
 Lethbridge, Alberta, Canada  
 `rushi28prajapati@gmail.com`
-
-Replace any details you want before publishing this README on your GitHub.
